@@ -1,4 +1,3 @@
-let query = new connection('https://harmless-polydactyl-hiss.glitch.me/');
 const newPostsContainer = document.querySelector('#newPosts');
 const oldPostcontainer = document.querySelector('#oldPosts');
 

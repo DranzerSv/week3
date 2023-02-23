@@ -3,8 +3,8 @@ class connection {
     this.url = url;
   }
 
-  async getPosts() {
-    const request = this.url + 'posts';
+  async getPosts(id) {
+    const request = this.url + 'posts' + (id ? id : '');
     const requestOptions = {
       method: 'GET',
       headers: {
@@ -20,3 +20,4 @@ class connection {
     }
   }
 }
+let query = new connection('https://harmless-polydactyl-hiss.glitch.me/');
