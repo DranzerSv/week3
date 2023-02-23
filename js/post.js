@@ -38,7 +38,7 @@ class post {
     const single = this.data;
     const div = document.createElement('div');
     div.innerHTML = `
-    <div>
+    <div >
     <span>name  ${single['title']}</span>
     <h1>date ${single['createDate']}</h1>
     </div>

@@ -8,6 +8,13 @@ query.getPosts(id).then((data) => {
 
   character.renderSinglePost(cardContainer);
 
+  query.getAuthors().then((authors) => {
+    const index = data['author'] - 1;
+    console.log(authors[index]['name'] + ' ' + authors[index]['lastName']);
+  });
+
+  //--------------------------------------
+
   const tags = data['tags'];
 
   query.getTags().then((data) => {
@@ -33,7 +40,6 @@ query.getPosts(id).then((data) => {
         postCommentsContainer.appendChild(commentContainer);
 
         query.getUsers().then((users) => {
-          console.log(data[item]['user']);
           const content = users[data[item]['user'] - 1]['name'];
           renderElement(content, commentContainer, 'user');
         });
