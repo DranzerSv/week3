@@ -13,9 +13,11 @@ class post {
 
     for (let item = 0; item < 3; item++) {
       const div = document.createElement('div');
-      div.innerHTML = `
+      div.innerHTML = `<a href="details.html?id=${newest[item]['id']}">
       <span>name  ${newest[item]['title']}</span>
-      <h1>date ${newest[item]['createDate']}</h1>`;
+      <h1>date ${newest[item]['createDate']}</h1>
+  
+      </a>`;
       container.appendChild(div);
     }
   }
@@ -25,8 +27,10 @@ class post {
     for (let item = 3; item < this.data.length; item++) {
       const div = document.createElement('div');
       div.innerHTML = `
+      <a href="details.html?id=${oldest[item]['id']}">
       <span>name  ${oldest[item]['title']}</span>
-      <h1>date ${oldest[item]['createDate']}</h1>`;
+      <h1>date ${oldest[item]['createDate']}</h1>
+      </a>`;
       container.appendChild(div);
     }
   }
