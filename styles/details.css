@@ -6,4 +6,12 @@ body {
 }
 .comments {
   background-color: cornflowerblue;
+  height: 300px;
+}
+.commentContainer {
+  height: 70px;
+  background-color: brown;
+}
+.comment {
+  background-color: antiquewhite;
 }

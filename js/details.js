@@ -1,6 +1,6 @@
 const id = new URLSearchParams(window.location.search).get('id');
 const cardContainer = document.querySelector('#cardContainer');
-const postContainer = document.querySelector('#postComments');
+const postCommentsContainer = document.querySelector('#postComments');
 
 query.getPosts(id).then((data) => {
   //render a single character
@@ -11,18 +11,32 @@ query.getPosts(id).then((data) => {
   const tags = data['tags'];
 
   query.getTags().then((data) => {
-    for (item in tags) {
+    for (let item in tags) {
       const tagName = data[tags[item] - 1]['name'];
 
-      renderElement(tagName, cardContainer);
+      renderElement(tagName, cardContainer, 'tag');
     }
   });
   query.getComments().then((data) => {
     //render cooments of this post
-    for (item in data) {
+
+    for (let item in data) {
       if (parseInt(id) === data[item]['postId']) {
+        const commentContainer = document.createElement('div');
+
+        commentContainer.className = 'commentContainer';
+
         const commentContent = data[item]['comment'];
-        renderElement(commentContent, postContainer);
+
+        renderElement(commentContent, commentContainer, 'comment');
+
+        postCommentsContainer.appendChild(commentContainer);
+
+        query.getUsers().then((users) => {
+          console.log(data[item]['user']);
+          const content = users[data[item]['user'] - 1]['name'];
+          renderElement(content, commentContainer, 'user');
+        });
       }
     }
   });
