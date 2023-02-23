@@ -34,4 +34,15 @@ class post {
       container.appendChild(div);
     }
   }
+  renderSinglePost(container) {
+    const single = this.data;
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div>
+    <span>name  ${single['title']}</span>
+    <h1>date ${single['createDate']}</h1>
+    </div>
+    `;
+    container.appendChild(div);
+  }
 }

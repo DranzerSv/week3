@@ -4,7 +4,7 @@ class connection {
   }
 
   async getPosts(id) {
-    const request = this.url + 'posts' + (id ? id : '');
+    const request = this.url + 'posts' + (id ? `/${id}` : '');
     const requestOptions = {
       method: 'GET',
       headers: {
