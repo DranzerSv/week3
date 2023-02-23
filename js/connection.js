@@ -19,5 +19,21 @@ class connection {
       console.error('Error:', error);
     }
   }
+  async getTags() {
+    const request = this.url + 'tags';
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    try {
+      const response = await fetch(request, requestOptions);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 }
 let query = new connection('https://harmless-polydactyl-hiss.glitch.me/');

@@ -6,4 +6,15 @@ query.getPosts(id).then((data) => {
   const character = new post(data);
 
   character.renderSinglePost(cardContainer);
+
+  const tags = data['tags'];
+
+  query.getTags().then((data) => {
+    for (item in tags) {
+      const tagName = data[tags[item] - 1]['name'];
+      console.log(tags[item] - 1);
+
+      renderTag(tagName, cardContainer);
+    }
+  });
 });
