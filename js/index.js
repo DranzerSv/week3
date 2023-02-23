@@ -1,11 +1,14 @@
 let query = new connection('https://harmless-polydactyl-hiss.glitch.me/');
+const newPostsContainer = document.querySelector('#newPosts');
+const oldPostcontainer = document.querySelector('#oldPosts');
 
 //returns a promise in console.log
 
 query.getPosts().then((data) => {
   //dibujar primeros 3 posts
-  const poste = new post(data);
+  const character = new post(data);
 
-  poste.renderLastestPosts();
+  character.renderNewPosts(newPostsContainer);
   //dibujar resto de posts
+  character.renderOldPosts(oldPostcontainer);
 });

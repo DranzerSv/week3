@@ -8,15 +8,26 @@ class post {
     );
     return sortedPosts;
   }
-  renderLastestPosts() {
-    const lastest = this.sortPosts(this.data);
+  renderNewPosts(container) {
+    const newest = this.sortPosts(this.data);
 
     for (let item = 0; item < 3; item++) {
       const div = document.createElement('div');
       div.innerHTML = `
-      <span>name  ${lastest[item]['title']}</span>
-      <h1>date ${lastest[item]['createDate']}</h1>`;
-      document.body.appendChild(div);
+      <span>name  ${newest[item]['title']}</span>
+      <h1>date ${newest[item]['createDate']}</h1>`;
+      container.appendChild(div);
+    }
+  }
+  renderOldPosts(container) {
+    const oldest = this.sortPosts(this.data);
+
+    for (let item = 3; item < this.data.length; item++) {
+      const div = document.createElement('div');
+      div.innerHTML = `
+      <span>name  ${oldest[item]['title']}</span>
+      <h1>date ${oldest[item]['createDate']}</h1>`;
+      container.appendChild(div);
     }
   }
 }
