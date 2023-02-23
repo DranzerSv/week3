@@ -1,6 +1,6 @@
-function renderTag(tag, container) {
+function renderElement(element, container) {
   const div = document.createElement('div');
   div.className = 'tag';
-  div.innerHTML = tag;
+  div.innerHTML = element;
   container.appendChild(div);
 }
