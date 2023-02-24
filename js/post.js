@@ -13,10 +13,19 @@ class post {
 
     for (let item = 0; item < 3; item++) {
       const div = document.createElement('div');
-      div.innerHTML = `<a href="details.html?id=${newest[item]['id']}">
-      <span>name  ${newest[item]['title']}</span>
-      <h1>date ${newest[item]['createDate']}</h1>
-  
+      div.className = `newCard_` + item;
+      div.innerHTML = `<a href="details.html?id=${newest[item]['id']}" >
+      <div class='cardHeader'>
+      <img src=${newest[item]['image']}>
+      <div class='headerText'>
+      <p class='newText' >New Character</p>
+      <p>date:${newest[item]['createDate']}</p>
+      </div>
+      </div>
+      <div class='textContainer'>
+
+      <p>${newest[item]['body'].slice(0, 120) + '...'}</p>
+      </div>
       </a>`;
       container.appendChild(div);
     }
@@ -26,10 +35,19 @@ class post {
 
     for (let item = 3; item < this.data.length; item++) {
       const div = document.createElement('div');
-      div.innerHTML = `
-      <a href="details.html?id=${oldest[item]['id']}">
-      <span>name  ${oldest[item]['title']}</span>
-      <h1>date ${oldest[item]['createDate']}</h1>
+      div.className = `oldCard`;
+      div.innerHTML = `<a href="details.html?id=${oldest[item]['id']}" >
+      <div class='cardHeader'>
+      <img src=${oldest[item]['image']}>
+      <div class='headerText'>
+    
+      <p>Date : ${oldest[item]['createDate']}</p>
+      </div>
+      </div>
+      <div class='textContainer'>
+
+      <p>${oldest[item]['body'].slice(0, 120) + '...'}</p>
+      </div>
       </a>`;
       container.appendChild(div);
     }
