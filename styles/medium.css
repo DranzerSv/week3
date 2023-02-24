@@ -1,6 +1,5 @@
 @media (min-width: 768px) {
   body {
-    background-color: rgb(128, 68, 68);
     font-family: 'Changa';
   }
   a {
@@ -16,8 +15,11 @@
   }
   /*----------------news posts----------------------*/
   .newPosts__container {
+    max-width: 768px;
     display: grid;
+    padding: 0px;
     grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
   }
   .cardHeader {
     display: flex;
@@ -34,9 +36,10 @@
     width: 92%;
   }
   .newCard_0 {
+    grid-column: 1/3;
     box-sizing: border-box;
     background-color: whitesmoke;
-    width: 337px;
+    width: 94%;
     margin: auto;
     margin-bottom: 10px;
     padding: 4px;
@@ -68,8 +71,11 @@
   a {
   }
   .oldPosts__container {
+    max-width: 768px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
   }
   .oldCard {
     background-color: whitesmoke;
