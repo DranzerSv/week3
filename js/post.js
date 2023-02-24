@@ -55,10 +55,16 @@ class post {
   renderSinglePost(container) {
     const single = this.data;
     const div = document.createElement('div');
+    div.className = 'card';
+    div.id = 'card';
     div.innerHTML = `
-    <div >
-    <span>name  ${single['title']}</span>
-    <h1>date ${single['createDate']}</h1>
+   
+    <img src=${single['image']}>
+    <div id='cardHeader' class='cardHeader'>
+    <div class='date'>Date : ${single['createDate']}</div>
+    </div>
+    <div class='textContent'>
+    ${single['body']}
     </div>
     `;
     container.appendChild(div);

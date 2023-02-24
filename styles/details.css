@@ -1,8 +1,15 @@
 body {
   background-color: darksalmon;
+  font-family: 'Changa';
+}
+img {
+  width: 100%;
 }
 .character {
   background-color: aquamarine;
+  width: 90vw;
+  max-width: 700px;
+  margin: auto;
 }
 .comments {
   background-color: cornflowerblue;
@@ -15,10 +22,42 @@ body {
 .comment {
   background-color: antiquewhite;
 }
+.tagsContainer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
 .tag {
+  width: 80px;
+  height: 20px;
   background-color: blueviolet;
   border: solid 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  box-sizing: border-box;
+}
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+}
+.textContent {
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
 }
 .author {
-  background-color: chartreuse;
+  display: flex;
+  justify-content: start;
+  width: 50%;
+}
+.date {
+  display: flex;
+  justify-content: center;
+  width: 50%;
 }

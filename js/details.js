@@ -4,14 +4,24 @@ const postCommentsContainer = document.querySelector('#postComments');
 
 query.getPosts(id).then((data) => {
   //render a single character
+
   const character = new post(data);
+  character.renderSinglePost(cardContainer);
+
+  //rendered in post.js
+  const cardHeader = document.querySelector('#cardHeader');
+
+  const card = document.querySelector('#card');
+
+  const tagsContainer = document.createElement('div');
+  tagsContainer.className = 'tagsContainer';
 
   query.getAuthors().then((authors) => {
     const index = data['author'] - 1;
-    const fullName = authors[index]['name'] + ' ' + authors[index]['lastName'];
-    renderElement(fullName, cardContainer, 'author');
+    const fullName =
+      'Author : ' + authors[index]['name'] + ' ' + authors[index]['lastName'];
+    renderElement(fullName, cardHeader, 'author');
   });
-  character.renderSinglePost(cardContainer);
 
   //--------------------------------------
 
@@ -21,8 +31,9 @@ query.getPosts(id).then((data) => {
     for (let item in tags) {
       const tagName = data[tags[item] - 1]['name'];
 
-      renderElement(tagName, cardContainer, 'tag');
+      renderElement(tagName, tagsContainer, 'tag');
     }
+    card.appendChild(tagsContainer);
   });
   query.getComments().then((data) => {
     //render cooments of this post
