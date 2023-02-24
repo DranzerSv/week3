@@ -6,12 +6,12 @@ query.getPosts(id).then((data) => {
   //render a single character
   const character = new post(data);
 
-  character.renderSinglePost(cardContainer);
-
   query.getAuthors().then((authors) => {
     const index = data['author'] - 1;
-    console.log(authors[index]['name'] + ' ' + authors[index]['lastName']);
+    const fullName = authors[index]['name'] + ' ' + authors[index]['lastName'];
+    renderElement(fullName, cardContainer, 'author');
   });
+  character.renderSinglePost(cardContainer);
 
   //--------------------------------------
 

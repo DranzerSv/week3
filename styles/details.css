@@ -15,3 +15,10 @@ body {
 .comment {
   background-color: antiquewhite;
 }
+.tag {
+  background-color: blueviolet;
+  border: solid 2px black;
+}
+.author {
+  background-color: chartreuse;
+}
