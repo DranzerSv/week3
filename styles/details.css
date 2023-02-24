@@ -16,11 +16,22 @@ img {
   height: 300px;
 }
 .commentContainer {
+  margin-top: 10px;
   height: 70px;
   background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .comment {
+  margin-left: 5%;
+  width: 90%;
   background-color: antiquewhite;
+}
+.user {
+  margin-left: 5%;
+  background-color: aqua;
+  width: 140px;
 }
 .tagsContainer {
   height: 50px;

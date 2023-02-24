@@ -19,7 +19,7 @@ class post {
       <img src=${newest[item]['image']}>
       <div class='headerText'>
       <p class='newText' >New Character</p>
-      <p>date:${newest[item]['createDate']}</p>
+      <p>Date : ${newest[item]['createDate']}</p>
       </div>
       </div>
       <div class='textContainer'>

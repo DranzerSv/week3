@@ -46,13 +46,12 @@ query.getPosts(id).then((data) => {
 
         const commentContent = data[item]['comment'];
 
-        renderElement(commentContent, commentContainer, 'comment');
-
         postCommentsContainer.appendChild(commentContainer);
 
         query.getUsers().then((users) => {
-          const content = users[data[item]['user'] - 1]['name'];
+          const content = users[data[item]['user'] - 1]['name'] + ' says:';
           renderElement(content, commentContainer, 'user');
+          renderElement(commentContent, commentContainer, 'comment');
         });
       }
     }

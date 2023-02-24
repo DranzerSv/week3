@@ -11,13 +11,10 @@ class connection {
         'Content-Type': 'application/json',
       },
     };
-    try {
-      const response = await fetch(request, requestOptions);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error:', error);
-    }
+
+    const response = await fetch(request, requestOptions);
+    const data = await response.json();
+    return data;
   }
   async getTags() {
     const request = this.url + 'tags';
