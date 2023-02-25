@@ -2,7 +2,7 @@ const id = new URLSearchParams(window.location.search).get('id');
 const cardContainer = document.querySelector('#cardContainer');
 const postCommentsContainer = document.querySelector('#postComments');
 
-query.getPosts(id).then((data) => {
+query.getElements('posts', id).then((data) => {
   //render a single character
 
   const character = new post(data);
@@ -16,7 +16,7 @@ query.getPosts(id).then((data) => {
   const tagsContainer = document.createElement('div');
   tagsContainer.className = 'tagsContainer';
 
-  query.getAuthors().then((authors) => {
+  query.getElements('authors').then((authors) => {
     const index = data['author'] - 1;
     const fullName =
       'Author : ' + authors[index]['name'] + ' ' + authors[index]['lastName'];
@@ -27,7 +27,7 @@ query.getPosts(id).then((data) => {
 
   const tags = data['tags'];
 
-  query.getTags().then((data) => {
+  query.getElements('tags').then((data) => {
     for (let item in tags) {
       const tagName = data[tags[item] - 1]['name'];
 
@@ -35,7 +35,7 @@ query.getPosts(id).then((data) => {
     }
     card.appendChild(tagsContainer);
   });
-  query.getComments().then((data) => {
+  query.getElements('comments').then((data) => {
     //render cooments of this post
 
     for (let item in data) {
@@ -48,7 +48,7 @@ query.getPosts(id).then((data) => {
 
         postCommentsContainer.appendChild(commentContainer);
 
-        query.getUsers().then((users) => {
+        query.getElements('users').then((users) => {
           const content = users[data[item]['user'] - 1]['name'] + ' says:';
           renderElement(content, commentContainer, 'user');
           renderElement(commentContent, commentContainer, 'comment');
