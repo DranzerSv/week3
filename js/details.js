@@ -1,6 +1,7 @@
 const id = new URLSearchParams(window.location.search).get('id');
 const cardContainer = document.querySelector('#cardContainer');
 const postCommentsContainer = document.querySelector('#postComments');
+const deleteButton = document.querySelector('#delete');
 
 query.getElements('posts', id).then((data) => {
   //render a single character
@@ -56,4 +57,7 @@ query.getElements('posts', id).then((data) => {
       }
     }
   });
+});
+deleteButton.addEventListener('click', () => {
+  query.deletePost(id);
 });

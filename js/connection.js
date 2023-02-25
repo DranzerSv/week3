@@ -16,18 +16,9 @@ class connection {
     const data = await response.json();
     return data;
   }
-  async createPost() {
+  async createPost(post) {
     const url = 'https://harmless-polydactyl-hiss.glitch.me/posts/';
-    const post = {
-      title: 'curlesca',
-      subTitle: 'okarina',
-      image: 'https://i.ytimg.com/vi/INk1W8OujQI/maxresdefault.jpg',
-      body: 'Banshee is an all-around fighter whodfsdfsdfsdqwuu uuwto respond to any situation. In Super Smash Bros. Ultimate, he shows up in his Wedding tux and his Builder outfit, and Cappy even makes an appearance!',
-      createDate: '2018/06/18',
-      likes: 12,
-      author: 3,
-      tags: [1, 6],
-    };
+
     const requestOptions = {
       method: 'POST',
       headers: {
@@ -39,6 +30,22 @@ class connection {
     const response = await fetch(url, requestOptions);
     const data = await response.json();
     console.log('Respuesta:', data);
+  }
+  async deletePost(id) {
+    const url = 'https://harmless-polydactyl-hiss.glitch.me/posts/' + id;
+    const requestOptions = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    try {
+      const response = await fetch(url, requestOptions);
+      const data = await response.json();
+      console.log('Respuesta:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 }
 let query = new connection('https://harmless-polydactyl-hiss.glitch.me/');
