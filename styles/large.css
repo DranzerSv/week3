@@ -1,0 +1,108 @@
+@media (min-width: 1440px) {
+  body {
+    background-color: beige;
+    font-family: 'Changa';
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .newPosts__container {
+    max-width: 900px;
+    margin: auto;
+  }
+  img {
+    width: 50%;
+  }
+  /*----------------news posts----------------------*/
+  .newPosts__container p {
+    margin: auto;
+    margin-top: 20px;
+    width: 85%;
+  }
+  .newPosts__container {
+    box-sizing: border-box;
+    max-width: 1417px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cardHeader {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .headerText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .textContainer {
+    margin: auto;
+    width: 92%;
+  }
+  .newCard_0 {
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    width: 400px;
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 4px;
+    border: solid 1px #59e80c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    max-width: 600px;
+  }
+  .newCard_1 {
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    width: 400px;
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 4px;
+    border: solid 1px #59e80c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    max-width: 600px;
+  }
+  .newCard_2 {
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    width: 400px;
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 4px;
+    border: solid 1px #59e80c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    max-width: 600px;
+  }
+  .newText {
+    color: #59e80c;
+  }
+  /*----------------olds posts----------------------*/
+  a {
+  }
+  .oldPosts__container {
+    box-sizing: border-box;
+    max-width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .oldCard {
+    background-color: whitesmoke;
+    height: 210px;
+    width: 337px;
+    padding: 4px;
+    margin-bottom: 10px;
+    border: solid 1px #7874df;
+  }
+}
